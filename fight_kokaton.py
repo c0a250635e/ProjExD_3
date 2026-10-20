@@ -145,6 +145,10 @@ class Score:
     スコアを表示するクラス
     """
     def __init__(self):
+        """
+        スコア表示用のSurfaceを生成する
+        引数：なし
+        """
         self.fonto = pg.font.Font(None, 50)
         self.color = (0, 0, 255)
         self.score = 0
@@ -155,6 +159,7 @@ class Score:
     def update(self, screen: pg.Surface):
         """
         現在のスコアを画面に表示する
+        引数 screen：スコアを表示する画面Surface
         """
         self.img = self.fonto.render(f"Score: {self.score}", 0, self.color)
         screen.blit(self.img, self.rct)
